@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ebook_jee">
+        <property name="context-root" value="ebook_jee"/>
+        <property name="java-output-path" value="/ebook_jee/build/classes"/>
+    </wb-module>
+</project-modules>

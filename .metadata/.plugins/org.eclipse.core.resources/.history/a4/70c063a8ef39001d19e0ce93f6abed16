@@ -1,0 +1,10 @@
+package br.com.framework.hibernate.session;
+/*
+ * Responsável por estabelecer a conexão com hibernate
+ * @author ricardo
+ * 
+ * */
+
+public class HibernateUtil {
+
+}

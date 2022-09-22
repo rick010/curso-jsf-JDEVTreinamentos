@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+C:\emprel\workspaces\workspace-fullstack\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2342914488.index
+2629436819.index
+1566241141.index
+1875906760.index
+3647100091.index
+2465787115.index
+1425105556.index
+189478896.index

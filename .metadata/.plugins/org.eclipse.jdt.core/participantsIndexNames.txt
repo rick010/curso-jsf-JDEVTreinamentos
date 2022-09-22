@@ -1,0 +1,9 @@
+INDEX VERSION 1.131
+C:\emprel\workspaces\workspace-fullstack\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1239803670.index
+\curso-jsp\src\main\java
+C:\emprel\workspaces\workspace-fullstack\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3933667518.index
+\aulasjsfprimefaces\src
+C:\emprel\workspaces\workspace-fullstack\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3174117309.index
+\ebook_jee\src
+C:\emprel\workspaces\workspace-fullstack\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\862053041.index
+\ebook_jee\src

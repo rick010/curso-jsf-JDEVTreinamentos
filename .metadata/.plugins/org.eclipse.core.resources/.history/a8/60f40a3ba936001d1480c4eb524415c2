@@ -1,0 +1,10 @@
+package model;
+
+public class BeanUserFone {
+	
+	private String nome;
+	private String email;
+	private String numeroTelefone;
+	
+	
+}

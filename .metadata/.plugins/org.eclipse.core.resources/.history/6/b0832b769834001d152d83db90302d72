@@ -1,0 +1,93 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import conexaojdbc.SingleConnection;
+import model.Userposjava;
+
+public class UserposDAO {
+	
+	private Connection connection;
+	
+	public UserposDAO() {
+		connection = SingleConnection.getConnection();
+	}
+	
+	public void salvar(Userposjava userposjava) {
+		try {
+		String sql = "insert into userposjava (id, nome, email) values (?,?,?)";
+		PreparedStatement insert = connection.prepareStatement(sql);
+		insert.setLong(1, userposjava.getId());
+		insert.setString(2, userposjava.getNome());
+		insert.setString(3, userposjava.getEmail());
+		insert.execute();
+		connection.commit();//salva no banco
+		
+		} catch (Exception e) {
+			try {
+				connection.rollback();// reverte operação
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+			e.printStackTrace();
+		}
+	}
+	
+	public List<Userposjava> listar() throws Exception {
+		List<Userposjava> list = new ArrayList<>();
+		String sql = "select * from userposjava";
+		
+		PreparedStatement statement = connection.prepareStatement(sql);
+		ResultSet resultado = statement.executeQuery();
+		
+		while (resultado.next()) {
+			Userposjava userposjava = new Userposjava();
+			userposjava.setId(resultado.getLong("id"));
+			userposjava.setNome(resultado.getString("nome"));
+			userposjava.setEmail(resultado.getString("email"));
+			
+			list.add(userposjava);
+		}
+		
+		return list;
+	}
+	
+	public Userposjava buscar(Long id) throws Exception {
+		
+		String sql = "select * from userposjava where id = " + id;
+		
+		PreparedStatement statement = connection.prepareStatement(sql);
+		ResultSet resultado = statement.executeQuery();
+		
+		Userposjava userposjava = new Userposjava();
+		while (resultado.next()) {
+			
+			userposjava.setId(resultado.getLong("id"));
+			userposjava.setNome(resultado.getString("nome"));
+			userposjava.setEmail(resultado.getString("email"));
+		}
+			
+		
+		
+		return userposjava;
+	}
+	
+	public void atualizar(Userposjava user) {
+		String sql = "update userposjava set nome = ? where id = " + user.getId();
+		try {
+			PreparedStatement statement = connection.prepareStatement(sql);
+			statement.setString(1, user.getNome());
+			
+			statement.execute();
+			connection.commit();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

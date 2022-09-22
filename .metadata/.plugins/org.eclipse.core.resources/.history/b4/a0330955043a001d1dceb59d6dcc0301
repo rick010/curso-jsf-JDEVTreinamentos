@@ -1,0 +1,18 @@
+package br.com.framework.hibernate.session;
+
+import org.hibernate.SessionFactory;
+
+/*
+ * Responsável por estabelecer a conexão com hibernate
+ * @author ricardo
+ * 
+ * */
+
+public class HibernateUtil {
+
+	public static String JAVA_COMP_ENV_JDBC_DATA_SOUCE = "java:/comp/env/jdbc/datasource";
+	
+	private static SessionFactory sessionFactory = buildSessionFactory();
+	
+	/**/
+}
